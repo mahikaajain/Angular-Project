@@ -1,0 +1,78 @@
+<html>
+    <body>
+      <div class="navbar">
+        <img src="../../assets/images/Capture1.PNG" id="logo">
+        <a routerLink="/front" routerLinkActive="active">Logout</a>
+        <a style="background-color:teal; margin-top:3px;margin-bottom:3px;" href="#reviews">Explore</a>
+      <a routerLink="/about-us" routerLinkActive="active">AboutUs</a>
+      <a routerLink="/CreateGroup" routerLinkActive="active">Create a Group</a>
+      <a routerLink="/front" routerLinkActive="active">Home</a>
+      </div>
+      <div class="heading1">
+        <p class="review"><img src="../../assets/images/review_head.PNG"></p>
+      </div>
+      <mat-card>                         
+        <br><br>
+        <p *ngIf="tasks.length<=0" id="pp">Write your review here! </p>
+        
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+               
+                    <!-- <textarea class="form-control" rows="7" cols="7" placeholder="write your review" [(ngModel)]="task" color="accent"></textarea> -->
+                    <mat-form-field class="example-full-width" >
+                      <mat-label id="rev_head"><b>Review</b></mat-label>
+                      <textarea matInput placeholder="write your review" rows="7"  [(ngModel)]="task"></textarea>
+                    </mat-form-field>
+      <br><br>
+                   
+                   
+                      &nbsp;&nbsp;&nbsp;
+                        <button mat-raised-button class="btn btn-primary" color="primary" (click)="onClick()">Submit
+            </button><br><br>
+        
+            <ul class="list-group">
+              <li *ngFor="let task of tasks" class="list-group-item">
+            <mat-card >
+                   {{ task.name }} 
+            </mat-card>
+              </li>
+          </ul>
+          <mat-card class="example-full-width">
+            <p class="revwrite"> Make an impact.<br>
+              "Hosting oyster tasting events on Meetup allows me to create a larger impact beyond my blog and get more people interested in and involved with sustainable seafood."
+              <br>Julie • New York Oyster Lovers</p> 
+     </mat-card><br><br>
+     <mat-card class="example-full-width">
+      <p class="revwrite">Find your people<br>
+        "I couldn’t find people from Japan or people who wanted to learn about Japanese startups and technology. I discovered through creating a Meetup group that many others were also looking for connections like this."
+       <br> Masa • Japan NYC Startup</p>
+     </mat-card ><br><br>
+     <mat-card class="example-full-width">
+      <p class="revwrite">Grow a network<br>
+        "Meetup allows me to reach people I wouldn’t otherwise meet and invite them to be a part of something I love."
+        <br>Charlie • Green is the New Black</p>
+     </mat-card >
+        </div>
+        </div>
+        </mat-card>
+        <div class="footer-main-div">
+          <!-- <p>Contact Us on</p> -->
+    <p id="foot"><img src="../../assets/images/footer.PNG"></p>
+          <div class="footer-social-icons">
+            <ul>
+                <br>
+              <!-- <li><a href="https://github.com/dikshagupta27" target="_blank"><i class="fa fa-github"></i></a></li> -->
+              <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://github.com/Lipakshi-Arora" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+            <br>
+            <p class="copywrite">
+              Copyright ©2020 No rights reserved!
+            </p>
+          </div>
+        </div>  
+     </body>
+     
+     </html>

@@ -1,0 +1,121 @@
+
+<html>
+    <body>
+        <div class="navbar">
+            <img src="../../assets/images/Capture1.PNG" id="logo">
+            <a routerLink="/front" routerLinkActive="active">Logout</a>
+            <a style="background-color:teal; margin-top:3px;margin-bottom:3px;" href="#group">Create a Group</a>
+          <a routerLink="/about-us" routerLinkActive="active">AboutUs</a>
+          <a routerLink="/interests" routerLinkActive="active">Explore</a>
+          <a routerLink="/front" routerLinkActive="active">Home</a>
+          </div><br><br>
+          <mat-horizontal-stepper  #stepper>
+ 
+            <mat-step label="Step 1">
+                <br><br>
+                <p class=heading>First, set your group’s location.</p>
+        <p class="under">Meetup groups meet locally and in person. We’ll connect you with people who live<br> in and around your area.</p>
+       <br><br> 
+        <mat-form-field>
+          <mat-label>Choose Your Location</mat-label>
+          <mat-select matNativeControl required  #aename="ngModel" ngModel name="aename">
+            <mat-option *ngFor="let city of citys" [value]="city.value">
+              {{city.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="aename.invalid">Please Enter a valid location.</mat-error>
+        </mat-form-field><br><br><br><br> 
+        <div>
+        <button class="next1" mat-button matStepperNext>Next</button>
+              </div>      
+    </mat-step>
+           
+            <mat-step label="Step 2">
+                <br><br>
+                <p class=heading>Choose a few topics that describe your group's interests.</p>
+<p class="under">Be specific! This will help us promote your group to the right people. </p>
+<br><br> 
+
+<mat-form-field class="lk">
+    <mat-label class="lk1">Interest</mat-label>
+    <mat-select matNativeControl required  ngModel name="aename" [formControl]="interests" multiple>
+      <mat-select-trigger>
+        {{interests.value ? interests.value[0] : ''}}
+        <span *ngIf="interests.value?.length > 1" class="example-additional-selection">
+          (+{{interests.value.length - 1}} {{interests.value?.length === 2 ? 'other' : 'others'}})
+        </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let interest of interestList" [value]="interest">{{interest}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="aename.invalid">Please choose a interest.</mat-error>
+  </mat-form-field>
+                <br><br><br><br>
+              <div>
+                <button class="back" mat-button matStepperPrevious>Back</button>&nbsp;&nbsp;
+                <button class="next" mat-button matStepperNext>Next</button>
+              </div>
+            </mat-step>
+           
+            <mat-step label="Step 3">
+                
+                <br><br><p class="heading">What will your group’s name be?</p>
+                <p class="under">Choose a name that will give people a clear idea of what the group is about.<br> 
+                    Feel free to get creative! You can edit this later if you change your mind.</p><br>
+                    <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+                        <mat-label>Enter your group name here!</mat-label>
+                        <input matInput #input maxlength="10" placeholder="Ex:wishkers"required
+                        #fname="ngModel" ngModel name="fname">
+                        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+                        <mat-error *ngIf="fname.invalid">Please enter a valid name.</mat-error>
+                      </mat-form-field><br><br><br><br>
+                      <div>
+                        <button class="back" mat-button matStepperPrevious>Back</button>&nbsp;&nbsp;&nbsp;&nbsp;;
+                        <button  class="next" mat-button matStepperNext>Next</button>
+                      </div>
+                </mat-step>
+                <mat-step label="Step 4">
+                    <br><br>
+                    <p class=heading>Now describe what your group will be about</p>
+            <p class="under">People will see this when we promote your group, but you’ll be able to add to it later, too.</p>
+              <br>  <ol class="list">
+                    <li>What's the purpose of the group?</li>
+                    <li> Who should join?</li>
+                    <li> What will you do at your events?.</li>
+            </ol>
+            <br><br>
+            <mat-form-field class="example-full-width" >
+                <mat-label id="rev_head"><b>Write atleast 50 characters.</b></mat-label>
+                <textarea matInput placeholder="write your review" rows="7" required
+                #fname="ngModel" ngModel name="fname"></textarea>
+                <mat-error *ngIf="fname.invalid">.</mat-error>
+              </mat-form-field><br><br><br><br>
+              <div>
+                <button class="back" mat-button matStepperPrevious>Back</button>&nbsp;&nbsp;&nbsp;;
+                <button class="next" mat-button matStepperNext>Next</button>
+              </div>
+            </mat-step>
+            <mat-step label="Step 5">
+              <br><br>  <p class="heading">Almost done! Just take a minute to review our guidelines</p>
+              <p class="under">Meetup is all about helping people live fuller, happier lives—with the help of strong communities.<br>
+                 This means that all groups should:</p><br>
+                 <ul class="list">
+                     <li>Provide growth opportunities for members</li>
+                     <li>Encourage real human interactions</li>
+                     <li>Meet in real life</li>
+                     <li>Have a host present at all events</li>
+                     <li>Be transparent about the group’s intention</li>
+                 </ul><br><br><br>
+                 
+                 <div>
+                    <button  class="reset" mat-button (click)="stepper.reset()">Reset</button>&nbsp;
+                  
+                    <button class="back1" mat-button matStepperPrevious>Back</button>&nbsp;
+                    
+                    <button onclick="alert('Details Submitted !')" class="btn" ><a class="link" routerLink="/front" routerLinkActive="active">Submit</a></button>
+                  </div>
+                  
+              </mat-step>
+          </mat-horizontal-stepper>
+          
+          </body>
+          </html>

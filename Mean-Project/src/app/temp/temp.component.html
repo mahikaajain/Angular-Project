@@ -1,0 +1,126 @@
+<html>
+    <head>
+    </head>
+    <body>
+      
+    <div class="container" id="container">
+        
+        <div class="form-container sign-up-container">
+            
+            <form (ngSubmit)="registerProcess(registerForm)" #registerForm="ngForm">
+             <fieldset>
+                <h1>Create Account</h1>
+             
+                
+                <mat-form-field  class="example-full-width"  color="accent" [style.fontSize.px]=15>
+                    <mat-label>Name</mat-label>
+                    <input matInput  placeholder="Please enter a valid  name" minlength="3" maxlength="25" required
+                    #Name="ngModel" ngModel name="Name" class="input1">
+                    <mat-error *ngIf="Name.invalid">Please enter a valid name.</mat-error>
+
+                </mat-form-field><br>
+                <mat-form-field  class="example-full-width"  color="accent"[style.fontSize.px]=15>
+                    <mat-label>Email Id</mat-label>
+                    <input matInput placeholder="Please enter a valid email"type="text" required
+                    email
+                    #email="ngModel" ngModel name="email">
+                    <mat-error *ngIf="email.invalid">Please enter a valid email.</mat-error>
+                </mat-form-field> <br>
+                  <mat-form-field class="example-full-width"  color="accent" [style.fontSize.px]=15 >
+                    <mat-label>Password</mat-label >
+                      <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" minlength="8" required ngModel name="password" #password="ngModel"   >
+                      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                  <mat-error *ngIf="password.invalid">Please enter password.</mat-error>
+                  </mat-form-field>    
+                 
+                <button class="btn1"><a 
+                    (click) = "registerProcess(registerForm)" >
+                            Sign Up</a></button>
+                          </fieldset>
+            </form>
+        </div>  
+        <div class="form-container sign-in-container">
+            
+            <form (ngSubmit)="LoginProcess(loginForm)" #loginForm="ngForm">
+              <fieldset>
+                <h1>Sign in</h1>
+                <br>
+                <div class="form-group">
+                    <button class="btn-social-icon btn-google google btnn " (click)="signInWithGoogle()">
+                      <span >
+                        <i class="fa fa-google fa-fw">
+                        </i>
+                      </span>
+                    </button>
+                   &nbsp;
+                    <button class=" btn-social-icon btn-facebook fb btnn" (click)="signInWithFB()">
+                      <span >
+                        <i class="fa fa-facebook fa-fw"></i>
+                      </span>
+                    </button>
+                    <br>
+                  </div>
+                <span>or use your account</span>
+                <mat-form-field  class="example-full-width"  color="accent"[style.fontSize.px]=15>
+                    <mat-label>Email Id</mat-label>
+                    <input matInput placeholder="Please enter a valid email"type="text"
+                    required
+                    email
+                    #email="ngModel" ngModel name="email">
+                    <mat-error *ngIf="email.invalid">Please enter a valid email.</mat-error>
+                  </mat-form-field> <br>
+                  <!-- <mat-form-field class="example-full-width"  color="accent" [style.fontSize.px]=15 appearence="outline">
+                    <mat-label>Password</mat-label >
+                      <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" minlength="8" required ngModel name="password" #password="ngModel"   >
+                      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                  <mat-error *ngIf="password.invalid">Please enter password.</mat-error>
+                  </mat-form-field> -->
+                  <mat-form-field class="example-full-width"  color="primary" [style.fontSize.px]=15>
+                    <mat-label>Password</mat-label >
+                      <input type="password" matInput placeholder="Enter password"
+                         minlength="8" ngModel name="password" 
+                         #password="ngModel" required showHideInput>
+                      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                      <mat-error *ngIf="password.invalid">Please enter password.</mat-error>
+                  </mat-form-field>  
+                <a href="#">Forgot your password?</a>
+                <button class="btn1"><a href="#"
+                    (click)=" onLogin(loginForm)" routerLink="/interests" routerLinkActive="active">Sign In</a></button>
+                  </fieldset>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="footer">
+<b> Follow us on :</b>
+  <div class="icons">
+    <a href="https://www.facebook.com/" target="_blank" class="social"><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com/" target="_blank" class="social"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.instagram.com" target="_blank" class="social"><i class="fa fa-instagram"></i></a>
+    <a href="https://github.com/" target="_blank" class="social"><i class="fa fa-github"></i></a>
+    <a href="https://linkedin.com/" target="_blank" class="social"><i class="fa fa-linkedin"></i></a>
+    </div>
+    </div>
+    
+    </body>
+</html>

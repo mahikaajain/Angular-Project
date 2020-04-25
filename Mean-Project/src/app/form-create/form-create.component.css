@@ -1,0 +1,148 @@
+.mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+    margin-left: 40%;
+    width:300px;
+ 
+  }
+  #logo
+{
+border-radius:12px;
+height:50px;
+width:140px;
+}
+.navbar {
+  overflow: hidden;
+background-image: linear-gradient(to right, #000000 0%, #434343 51%, #000000 100%);
+ margin-bottom:0px;
+  font-family: Arial;
+}
+.navbar a {
+  
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+float:right;
+}
+
+.navbar a:hover {
+  background-color:DimGrey;
+}
+.heading
+{
+    font-size:40px;
+    font-weight: bolder;
+    text-align: center;
+}
+.list
+{
+    margin-left: 40%;
+}
+.under
+{
+    font-size:14px;
+    text-align: center;
+}
+.input1
+{
+    width: 200%;;
+    height:100px;
+}
+.example-full-width
+{
+    border:1px solid black;
+    width:50%;
+   opacity:0.5;
+   margin-left:27%;
+    
+}
+.link
+{
+    color:black;
+}
+.link:hover{
+    color:white;
+}
+.btn
+{
+ background-color: rgb(33, 68, 184);
+    color:black;
+    width:100px;
+    height:50px;
+font-weight:500;
+}
+.btn:hover{
+    color:white;
+}
+.next{
+    background-color: rgb(33, 68, 184);
+    color:black;
+    width:100px;
+    height:50px;
+ 
+    margin-top:0px;
+   
+}
+.reset
+{
+    background-color: rgb(33, 68, 184);
+    color:black;
+    width:100px;
+    height:50px;
+    margin-left:40%;
+}.back1
+{
+    background-color: rgb(33, 68, 184);
+    color:black;
+    width:100px;
+    height:50px;
+}
+.back
+{
+    background-color: rgb(33, 68, 184);
+    color:black;
+    width:100px;
+    height:50px;
+    
+    margin-left: 43%;
+}
+.next:hover{
+    color:white;
+}
+.back:hover{
+    color:white;
+}
+.next1
+{
+    background-color: rgb(33, 68, 184);
+    color:black;
+    width:100px;
+    height:50px;
+  margin-left:47%;
+}
+.next1:hover{
+    color:white;
+}
+.back1:hover{
+    color:white;
+}
+.reset:hover{
+    color:white;
+}
+.lk{
+    width: 40%;
+    margin-left: 33%;
+}
+.lk1
+{
+    font-size: larger;
+}
+.example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
